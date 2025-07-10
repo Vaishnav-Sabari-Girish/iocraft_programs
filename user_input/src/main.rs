@@ -37,7 +37,7 @@ fn NameInput(props: &NameInputProps) -> impl Into<AnyElement<'static>> {
 fn NameForm(mut hooks: Hooks) -> impl Into<AnyElement<'static>> {
     let mut system = hooks.use_context_mut::<SystemContext>();
     let name = hooks.use_state(|| "".to_string());
-    let mut has_focus = hooks.use_state(|| true);
+    let has_focus = hooks.use_state(|| true);
     let mut should_submit = hooks.use_state(|| false);
 
     hooks.use_terminal_events(move |event| match event {
